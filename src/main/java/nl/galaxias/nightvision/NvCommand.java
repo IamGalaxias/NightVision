@@ -20,21 +20,23 @@ public class NvCommand implements CommandExecutor {
 
             if (sender.hasPermission("nightvision.toggle")) {
                 if (args.length != 1) {
-                    player.sendMessage(ChatColor.RED + "/" + cmd + " toggle");
+                    player.sendMessage(ChatColor.RED + "/" + cmd.getName() + " toggle");
                 }
 
-                if (toggle == true) {
-                    toggle = false;
+                if (args[0].equals("toggle")) {
+                    if (toggle == true) {
+                        toggle = false;
 
-                    player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+                        player.removePotionEffect(PotionEffectType.NIGHT_VISION);
 
-                    ChatColor.translateAlternateColorCodes('&', NightVision.getPlugin().getConfig().getString("messages.toggle-off"));
-                }
+                        ChatColor.translateAlternateColorCodes('&', NightVision.getPlugin().getConfig().getString("messages.toggle-off"));
+                    }
 
-                if (toggle == false) {
-                    toggle = true;
+                    if (toggle == false) {
+                        toggle = true;
 
-                    player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100000, 1));
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100000, 1));
+                    }
                 }
             }
             else if (!(sender.hasPermission("nightvision.toggle"))) {
