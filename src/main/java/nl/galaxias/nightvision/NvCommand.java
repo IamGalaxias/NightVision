@@ -23,7 +23,7 @@ public class NvCommand implements CommandExecutor {
                     player.sendMessage(ChatColor.RED + "/" + cmd.getName() + " toggle");
                 }
 
-                if (args.length == 1 && args[0].equals("toggle")) {
+                if (args.length > 0 && args[0].equals("toggle")) {
                     if (toggle == true) {
                         toggle = false;
 
@@ -37,6 +37,7 @@ public class NvCommand implements CommandExecutor {
 
                         if (args.length > 1) {
                             int duration = Integer.parseInt(args[1]);
+                            
                             player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, duration, 1));
                         }
 
