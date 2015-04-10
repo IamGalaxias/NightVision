@@ -5,7 +5,7 @@ version: 1.0
 commands:
    nv:
       description: Turn on Night Vision
-      usage: /<command> toggle
+      usage: /<command> toggle [duration]
       permission: nightvision.toggle
       permission-message: You don't have <permission>
 
