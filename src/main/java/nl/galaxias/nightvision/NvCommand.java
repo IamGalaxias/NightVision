@@ -29,13 +29,15 @@ public class NvCommand implements CommandExecutor {
 
                         player.removePotionEffect(PotionEffectType.NIGHT_VISION);
 
-                        ChatColor.translateAlternateColorCodes('&', NightVision.getPlugin().getConfig().getString("messages.toggle-off"));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', NightVision.getPlugin().getConfig().getString("messages.toggle-off")));
                     }
 
                     else if (toggle == false) {
                         toggle = true;
 
                         player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100000, 1));
+
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', NightVision.getPlugin().getConfig().getString("messages.toggle-on")));
                     }
                 }
             }
