@@ -1,0 +1,15 @@
+name: NightVision
+version: 1.0
+main: nl.galaxias.nightvision.NightVision
+
+commands:
+  nv:
+    description: Turn on Night Vision.
+    usage: /<command> toggle
+    permission: nightvision.toggle
+
+ permissions:
+   nightvision.toggle:
+     description: Allows you to turn on Night Vision
+     default: true
+
