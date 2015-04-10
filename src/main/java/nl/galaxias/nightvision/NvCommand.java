@@ -37,11 +37,11 @@ public class NvCommand implements CommandExecutor {
 
                         if (args.length > 1) {
                             int duration = Integer.parseInt(args[1]);
-                            
+
                             player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, duration, 1));
                         }
 
-                        if (args.length == 1) {
+                        else if (args.length == 1) {
                             player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100000, 1));
                         }
 
